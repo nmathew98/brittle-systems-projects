@@ -1,0 +1,48 @@
+{
+	"name": "frontend-react",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"lint": "eslint --ext .ts,.js,.tsx,.jsx --ignore-path .gitignore . --fix",
+		"format": "prettier .  --write",
+		"test": "vitest",
+		"test.watch": "vitest --watch"
+	},
+	"dependencies": {
+		"date-fns": "^2.29.3",
+		"dompurify": "^3.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-head": "^3.4.2",
+		"react-markdown": "^8.0.5",
+		"react-query": "^3.39.3",
+		"react-router": "^6.8.1",
+		"react-router-dom": "^6.8.1",
+		"remark-gfm": "^3.0.1",
+		"xstate": "^4.36.0"
+	},
+	"devDependencies": {
+		"@testing-library/dom": "^9.0.0",
+		"@testing-library/react": "^14.0.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/react": "^18.0.27",
+		"@types/react-dom": "^18.0.10",
+		"@typescript-eslint/eslint-plugin": "^5.52.0",
+		"@typescript-eslint/parser": "^5.52.0",
+		"@vitejs/plugin-react-swc": "^3.0.0",
+		"eslint": "^8.34.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"happy-dom": "^8.4.4",
+		"prettier": "^2.8.4",
+		"typescript": "^4.9.3",
+		"unplugin-auto-import": "^0.14.3",
+		"vite": "^4.1.0",
+		"vitest": "^0.28.5"
+	}
+}
