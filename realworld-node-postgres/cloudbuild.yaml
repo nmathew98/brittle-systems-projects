@@ -1,0 +1,53 @@
+---
+steps:
+  # Login to DockerHub
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      "login",
+      "-u",
+      "${_DOCKER_USERNAME}",
+      "-p",
+      "${_DOCKER_PASSWORD}",
+      "docker.io"
+    ]
+  # Test and build image
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-f", "docker/deploy/Dockerfile", "--target", "test", "."]
+    dir: "backend-npostgres"
+    id: "backend-npostgres-test"
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      "build",
+      "-t",
+      "naveenmathew/realworld-backend-npostgres:${COMMIT_SHA}",
+      "-t",
+      "naveenmathew/realworld-backend-npostgres:latest",
+      "-f", "docker/deploy/Dockerfile",
+      "."
+    ]
+    env:
+      - "JWT_ACCESS_SECRET=${_JWT_ACCESS_SECRET}"
+      - "JWT_REFRESH_SECRET=${_JWT_INTERNAL_SECRET}"
+      - "JWT_INTERNAL_SECRET=${_JWT_REFRESH_SECRET}"
+    dir: "backend-npostgres"
+    waitFor:
+      - "backend-npostgres-test"
+  # DockerHub
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      "push",
+      "naveenmathew/realworld-backend-npostgres",
+      "--all-tags",
+    ]
+  # Deploy Google Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "gcloud"
+    args: [
+      "run",
+      "deploy",
+      "realworld-backend-npostgres",
+      "--image",
+      "naveenmathew/realworld-backend-npostgres:latest",
+      "--region",
+      "australia-southeast2"
+    ]

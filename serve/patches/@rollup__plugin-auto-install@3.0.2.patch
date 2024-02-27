@@ -1,0 +1,13 @@
+diff --git a/types/index.d.ts b/types/index.d.ts
+index 5fc712a188f21030dbe85fcb3ae78624363f571c..01cf7ec8a11999a73e3dade602a5b6c2c276bdd7 100644
+--- a/types/index.d.ts
++++ b/types/index.d.ts
+@@ -13,7 +13,7 @@ export interface RollupAutoInstallOptions {
+    * Specifies the package manager to use; `npm` or `yarn`.
+    * If not specified, the plugin will default to `yarn` if `yarn.lock` exists, or `npm` otherwise.
+    */
+-  manager?: 'npm' | 'yarn';
++  manager?: 'npm' | 'yarn' | 'pnpm';
+ }
+ 
+ /**

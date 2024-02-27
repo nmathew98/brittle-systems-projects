@@ -1,0 +1,53 @@
+{
+	"name": "battleship",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"format": "prettier .  --write",
+		"lint": "eslint --ext .ts,.js,.tsx,.jsx --ignore-path .gitignore . --fix",
+		"test": "vitest run",
+		"test.watch": "vitest --watch",
+		"prepare": "cd .. && husky install battleship/.husky"
+	},
+	"dependencies": {
+		"@heroicons/react": "^2.0.17",
+		"@reduxjs/toolkit": "^1.9.5",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-redux": "^8.0.5",
+		"redux": "^4.2.1"
+	},
+	"devDependencies": {
+		"@headlessui/react": "^1.7.14",
+		"@redux-devtools/core": "^3.13.1",
+		"@testing-library/dom": "^9.2.0",
+		"@testing-library/react": "^14.0.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/react": "^18.0.28",
+		"@types/react-dom": "^18.0.11",
+		"@typescript-eslint/eslint-plugin": "^5.57.1",
+		"@typescript-eslint/parser": "^5.57.1",
+		"@vitejs/plugin-react-swc": "^3.0.0",
+		"autoprefixer": "^10.4.14",
+		"eslint": "^8.38.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.3.4",
+		"happy-dom": "^9.9.2",
+		"husky": "^8.0.3",
+		"postcss": "^8.4.23",
+		"prettier": "^2.8.8",
+		"prettier-plugin-tailwindcss": "^0.2.7",
+		"tailwindcss": "^3.3.2",
+		"typescript": "^5.0.2",
+		"unplugin-auto-import": "^0.15.3",
+		"vite": "^4.3.2",
+		"vitest": "^0.30.1"
+	}
+}

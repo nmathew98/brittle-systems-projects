@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "eb145adb-db84-426c-9901-1f77e2905b73",
+		"name": "Realworld Backend Postgres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17948857"
+	},
+	"item": [
+		{
+			"name": "Get Articles Feed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "cachepurge",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://realworld-backend-npostgres-ohlbky5imq-km.a.run.app/api/articles/feed",
+					"protocol": "https",
+					"host": [
+						"realworld-backend-npostgres-ohlbky5imq-km",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"api",
+						"articles",
+						"feed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://realworld-backend-npostgres-ohlbky5imq-km.a.run.app/api/user",
+					"protocol": "https",
+					"host": [
+						"realworld-backend-npostgres-ohlbky5imq-km",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://realworld-backend-npostgres-ohlbky5imq-km.a.run.app/api/profiles/naveenmathew",
+					"protocol": "https",
+					"host": [
+						"realworld-backend-npostgres-ohlbky5imq-km",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"api",
+						"profiles",
+						"naveenmathew"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"test@abcdef.com\",\n        \"password\": \"abcDEF123\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://realworld-backend-npostgres-ohlbky5imq-km.a.run.app/api/users/login",
+					"protocol": "https",
+					"host": [
+						"realworld-backend-npostgres-ohlbky5imq-km",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"username\": \"test123\",\n        \"email\": \"test2@abcdef.com\",\n        \"password\": \"abcDEF123\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://realworld-backend-npostgres-ohlbky5imq-km.a.run.app/api/users",
+					"protocol": "https",
+					"host": [
+						"realworld-backend-npostgres-ohlbky5imq-km",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

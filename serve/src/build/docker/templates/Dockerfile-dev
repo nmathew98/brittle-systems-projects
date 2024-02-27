@@ -1,0 +1,19 @@
+FROM node:latest
+
+RUN mkdir -p /srv/api
+WORKDIR /srv/api
+
+ENV NODE_ENV development
+ENV PORT 4000
+
+EXPOSE 4000
+
+COPY serve.config.ts /srv/api
+COPY package.json /srv/api
+COPY tsconfig.json /srv/api
+COPY .env /srv/api/
+COPY src /srv/api/
+
+RUN corepack pnpm install
+
+CMD ["corepack", "pnpm", "run", "watch", "--experimental-fetch"]

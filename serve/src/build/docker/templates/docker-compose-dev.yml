@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: api-dev
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    expose:
+      - 4000
+    volumes:
+      - ./serve.config.ts:/srv/api/serve.config.ts
+      - ./package.json:/srv/api/package.json
+      - ./tsconfig.json:/srv/api/tsconfig.json
+      - ./.env:/srv/api/.env
+      - ./src:/srv/api/src
+    ports:
+      - 4000:4000
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+    command: corepack pnpm run watch --experimental-fetch
